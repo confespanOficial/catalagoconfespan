@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confespan — Catálogo e Pedido</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <img class="mascot" src="mascote.png" alt="Mascote da Confespan: formiga chef de cozinha">
+    <div>
+      <span class="mark">CONFESPAN</span>
+      <h1>Catálogo de Pedidos</h1>
+      <div class="sub">distribuidora de produtos alimentícios</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="toolbar">
+    <div class="search">
+      <input type="text" id="searchInput" placeholder="Buscar produto por nome ou código...">
+    </div>
+    <div class="count-pill" id="countPill"></div>
+  </div>
+
+  <table class="list">
+    <thead>
+      <tr>
+        <th class="code">Cód.</th>
+        <th>Produto</th>
+        <th class="num">Preço</th>
+        <th class="num">Qtd.</th>
+      </tr>
+    </thead>
+    <tbody id="productBody"></tbody>
+  </table>
+  <div class="empty" id="emptyState" style="display:none;">Nenhum produto encontrado.</div>
+</div>
+
+<button class="cart-fab" id="cartFab">
+  <span>NOTA DE PEDIDO</span>
+  <span class="badge" id="cartBadge">0</span>
+</button>
+
+<div class="overlay" id="overlay"></div>
+
+<aside class="slip" id="slip">
+  <div class="slip-head">
+    <button class="slip-close" id="slipClose">×</button>
+    <div class="tag">Confespan · Via do Cliente</div>
+    <h2>Nota de Pedido</h2>
+  </div>
+  <div class="slip-body" id="slipBody">
+    <div class="slip-empty">Sua nota está vazia.<br>Adicione produtos no catálogo.</div>
+  </div>
+  <div class="slip-total">
+    <div class="row"><span>Itens</span><span id="totalItems">0</span></div>
+    <div class="row grand"><span>Total</span><span id="totalPrice">R$ 0,00</span></div>
+  </div>
+  <div class="slip-foot">
+    <div class="field">
+      <label>Forma de pagamento</label>
+      <div class="pay" id="payOptions">
+        <label class="pay-opt"><input type="radio" name="pay" value="À vista no PIX"><span>À vista no PIX</span></label>
+        <label class="pay-opt"><input type="radio" name="pay" value="7 dias no boleto"><span>7 dias no boleto</span></label>
+        <label class="pay-opt"><input type="radio" name="pay" value="14 dias no boleto"><span>14 dias no boleto</span></label>
+      </div>
+    </div>
+    <button class="send-btn" id="sendBtn" disabled>✆ Enviar pedido no WhatsApp</button>
+    <div class="slip-note">Ao enviar, o WhatsApp abre com o pedido pronto para a Day. Nada é cobrado aqui — a confirmação é feita por ela.</div>
+  </div>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
